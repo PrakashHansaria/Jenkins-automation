@@ -6,6 +6,30 @@
   <artifactId>for-jenkins-automation</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>jar</packaging>
+  <build>
+  <plugins>
+    <plugin>
+      <!-- Build an executable JAR -->
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-jar-plugin</artifactId>
+      <version>2.4</version>
+      <configuration>
+        <archive>
+          <manifest>
+            <mainClass>com.sapient.ui.App</mainClass>
+          </manifest>
+        </archive>
+      </configuration>
+    </plugin>
+
+    <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>3.0.0-M4</version>
+        </plugin>
+        
+  </plugins>
+</build>
 
   <name>for-jenkins-automation</name>
   <url>http://maven.apache.org</url>
@@ -15,11 +39,12 @@
   </properties>
 
   <dependencies>
-    <dependency>
+<!-- https://mvnrepository.com/artifact/junit/junit -->
+  <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>3.8.1</version>
+      <version>4.4</version>
       <scope>test</scope>
-    </dependency>
+  </dependency>
   </dependencies>
 </project>
